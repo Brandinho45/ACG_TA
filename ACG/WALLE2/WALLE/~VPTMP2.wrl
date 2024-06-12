@@ -1,0 +1,20 @@
+#VRML V2.0 utf8
+
+Shape{
+appearance DEF metalamarillo Appearance{
+texture ImageTexture{
+url["colores/amarillo.jpg"]
+}
+}
+}
+DEF	ojoizquierdo Inline{
+url	"ojoizquierdo.wrl"
+}
+Transform{
+translation	12.5 0 0
+children[
+DEF	ojoderecho Inline{
+url	"ojoderecho.wrl"
+}
+]
+}

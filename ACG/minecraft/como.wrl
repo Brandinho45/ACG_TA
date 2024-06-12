@@ -1,0 +1,13 @@
+#VRML V2.0 utf8
+
+Shape{
+	appearance Appearance {
+		material Material{
+			diffuseColor 0 1 0
+		}
+	}
+	geometry Cone{
+		bottomRadius 0.78
+		height 2 
+	}
+}

@@ -1,0 +1,199 @@
+#VRML V2.0 utf8
+DEF nivel1 Transform {
+   children [
+      DEF hoja Transform {
+         translation 2.5 7.5 2.5
+         children [
+            Inline {
+               url "hojamine.wrl"
+            }
+         ]
+      }
+      Transform {
+         translation 0 0 5
+         children [USE hoja]
+      }
+      Transform {
+         translation -5 0 5
+         children [USE hoja]
+      }
+      Transform {
+         translation -10 0 5
+         children [USE hoja]
+      }
+      Transform {
+         translation -10 0 0
+         children [USE hoja]
+      }
+      Transform {
+         translation -10 0 -5
+         children [USE hoja]
+      }
+      Transform {
+         translation -5 0 -5
+         children [USE hoja]
+      }
+      Transform {
+         translation 0 0 -5
+         children [USE hoja]
+      }
+   ]
+}
+Transform {
+   translation 0 5 0
+   children [USE nivel1 ]
+}
+Transform {
+   translation 0 10 0
+   children [USE nivel1 ]
+}
+#nivel2
+DEF nivel2 Transform {
+   children [
+      Transform {
+         translation 0 0 10
+         children [USE hoja]
+      }
+      Transform {
+         translation -5 0 10
+         children [USE hoja]
+      }
+      Transform {
+         translation -10 0 10
+         children [USE hoja]
+      }
+      Transform {
+         translation -15 0 10
+         children [USE hoja]
+      }
+      Transform {
+         translation -15 0 5
+         children [USE hoja]
+      }
+      Transform {
+         translation -15 0 0
+         children [USE hoja]
+      }
+      Transform {
+         translation -15 0 -5
+         children [USE hoja]
+      }
+      Transform {
+         translation -15 0 -10
+         children [USE hoja]
+      }
+      Transform {
+         translation -10 0 -10
+         children [USE hoja]
+      }
+      Transform {
+         translation -5 0 -10
+         children [USE hoja]
+      }
+      Transform {
+         translation 0 0 -10
+         children [USE hoja]
+      }
+      Transform {
+         translation 5 0 -10
+         children [USE hoja]
+      }
+      Transform {
+         translation 5 0 -5
+         children [USE hoja]
+      }
+      Transform {
+         translation 5 0 0
+         children [USE hoja]
+      }
+      Transform {
+         translation 5 0 5
+         children [USE hoja]
+      }
+      Transform {
+         translation 5 0 10
+         children [USE hoja]
+      }
+   ]
+}
+Transform{
+   translation 0 5 0
+   children [USE nivel2]
+}
+Transform {
+   translation 0 15 0
+   children [USE hoja]
+}
+Transform {
+   translation -5 15 -5
+   children [USE hoja]
+}
+Transform {
+   translation -5 15 5
+   children [USE hoja]
+}
+Transform {
+   translation -5 15 0
+   children [USE hoja]
+}
+Transform {
+   translation -10 15 0
+   children [USE hoja]
+}
+
+
+Transform {
+   scale 0.999 1 0.999
+   children [
+      Inline {
+         url "madera.wrl"
+      }
+   ]
+}
+Transform {
+   scale 0.999 1 0.999
+   translation 0 -5 0
+   children [
+      Inline {
+         url "madera.wrl"
+      }
+   ]
+}
+
+
+Transform {
+   scale 0.999 1 0.999
+   translation 0 5 0
+   children [
+      Inline {
+         url "madera.wrl"
+      }
+   ]
+}
+Transform {
+   scale 0.999 1 0.999
+   translation 0 10 0
+   children [
+      Inline {
+         url "madera.wrl"
+      }
+   ]
+}
+Transform {
+   scale 0.999 1 0.999
+   translation 0 15 0
+   children [
+      Inline {
+         url "madera.wrl"
+      }
+   ]
+}
+Transform {
+   scale 0.999 1 0.999
+   translation 0 20 0
+   children [
+      Inline {
+         url "madera.wrl"
+      }
+   ]
+}

@@ -1,0 +1,143 @@
+#VRML V2.0 utf8
+Shape {
+	appearance DEF metal Appearance {
+		texture ImageTexture {
+			url	["texturas/metal.jpg"]
+		}
+	}
+}
+Shape {
+	appearance DEF franjas Appearance {
+		texture ImageTexture {
+			url	["texturas/franjas.jpg"]
+		}
+	}
+}
+Shape {
+	appearance DEF amarillometal Appearance {
+		texture ImageTexture {
+			url	["texturas/amarillometal.png"]
+		}
+	}
+}
+
+DEF brazo Transform {
+   children [
+Group {
+	children [
+      Transform {
+         translation 1.25 0 0
+         rotation 0 0 1 1.57
+         children [
+            Shape {
+               appearance USE metal
+               geometry Cylinder {
+                  height 2.5
+                  radius 0.5
+               }
+            }
+         ]
+      }
+		Shape {
+			appearance USE metal 
+			geometry Cylinder {
+				height 2.5
+				radius 0.5
+			}
+		}
+		Shape {
+			appearance USE amarillometal
+			geometry Cylinder {
+				height	2.25
+				radius 0.75
+			}
+		}
+		Transform{
+			translation	-0.5 0 5
+			children [
+				Shape {
+					appearance USE franjas
+					geometry Box {
+						size 0.5 2.20 10
+					}
+				}
+			]
+		}
+		Transform{
+			translation	0 0 5.05
+			rotation 1 0 0 1.57
+			children [
+				Shape {
+					appearance USE amarillometal
+					geometry Cylinder {
+						height	10.1
+						radius 0.7
+					}
+				}
+			]
+		}
+		Transform{
+			translation	0 0 5.15
+			rotation 1 0 0 1.57
+			children [
+				Shape {
+					appearance USE metal
+					geometry Cylinder {
+						height	10.3
+						radius 0.6
+					}
+				}
+			]
+		}
+		Transform{
+			translation	0 0 5.3
+			rotation 1 0 0 1.57
+			children [
+				Shape {
+					appearance USE metal
+					geometry Cylinder {
+						height	10.6
+						radius 0.5
+					}
+				}
+			]
+		}
+		Transform{
+			translation	0 0 10.9
+			children [
+				Shape {
+					appearance USE metal
+					geometry Box {
+						size 0.5 0.6 0.6
+					}
+				}
+			]
+		}
+		Transform {
+			translation	0 0 11.2
+			children [
+            DEF mano Inline	{
+				   url	"mano.wrl"
+			   }
+		   ]
+		}
+
+	]
+}
+]
+}
+DEF timerbrazo TimeSensor {
+   cycleInterval 10
+   loop TRUE
+}
+DEF oibrazo OrientationInterpolator {
+   key [0,0.5,1]
+   keyValue [
+      1 0 0 0.523599,
+      1 0 0 -0.523599,
+      1 0 0 0.523599
+   ]
+}
+
+ROUTE timerbrazo.fraction_changed TO oibrazo.set_fraction
+ROUTE oibrazo.value_changed TO brazo.set_rotation

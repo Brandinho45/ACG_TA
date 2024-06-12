@@ -1,0 +1,208 @@
+#VRML V2.0 utf8
+Shape {
+   appearance DEF metalamarillo Appearance {
+      texture ImageTexture {
+         url ["colores/amarillo.jpg"]
+      }
+   }
+}
+Shape{
+   appearance DEF negro Appearance {
+      material Material {
+         diffuseColor 0 0 0
+      }
+   }
+}
+Shape {
+   appearance DEF ojo Appearance {
+      texture ImageTexture {
+         url ["texturas/gris.jpg"]
+      }
+   }
+}
+
+Transform {
+   rotation 1 0 0 1.57
+   children [
+      Shape {
+         appearance USE ojo
+         geometry Cylinder {
+            height 3
+            radius 3
+         }
+      }
+   ]
+}
+Transform {
+   translation 0.5 0.7 0
+   rotation 1 0 0 1.57
+   children [
+      Shape {
+         appearance USE negro
+         geometry Cylinder {
+            height 3.1
+            radius 1.5
+         }
+      }
+   ]
+}
+#inicio
+Transform {
+   translation 2.878 2.75 0
+   children [
+      Shape {
+         appearance USE ojo
+         geometry Box {
+            size 6.36 0.5 3
+         }
+      }
+   ]
+}
+Transform {
+   translation 2 2.25 0
+   children [
+      Shape {
+         appearance USE ojo
+         geometry Box {
+            size 6 0.5 3
+         }
+      }
+   ]
+}
+Transform {
+   translation 2 2.25 0
+   children [
+      Shape {
+         appearance USE ojo
+         geometry Box {
+            size 7 0.5 3
+         }
+      }
+   ]
+}
+Transform {
+   translation 2 1.75 0
+   children [
+      Shape {
+         appearance USE ojo
+         geometry Box {
+            size 6 0.5 3
+         }
+      }
+   ]
+}
+Transform {
+   translation 2.2 1.25 0
+   children [
+      Shape {
+         appearance USE ojo
+         geometry Box {
+            size 5 0.5 3
+         }
+      }
+   ]
+}
+Transform {
+   translation 1.5 0.75 0
+   children [
+      Shape {
+         appearance USE ojo
+         geometry Box {
+            size 5 0.5 3
+         }
+      }
+   ]
+}
+Transform {
+   translation 1.3 0.25 0
+   children [
+      Shape {
+         appearance USE ojo
+         geometry Box {
+            size 5 0.5 3
+         }
+      }
+   ]
+}
+Transform {
+   translation 1.3 -0.25 0
+   children [
+      Shape {
+         appearance USE ojo
+         geometry Box {
+            size 4 0.5 3
+         }
+      }
+   ]
+}
+Transform {
+   translation 1.3 -0.75 0
+   children [
+      Shape {
+         appearance USE ojo
+         geometry Box {
+            size 3.9 0.5 3
+         }
+      }
+   ]
+}
+Transform {
+   translation 1.3 -1.25 0
+   children [
+      Shape {
+         appearance USE ojo
+         geometry Box {
+            size 3.1 0.5 3
+         }
+      }
+   ]
+}
+#final
+Transform {
+   translation 3.75 0.25 0
+   rotation 0 0 1 0.9
+   children [
+      Shape {
+         appearance USE ojo
+         geometry Box {
+            size 6 0.5 2.99
+         }
+      }
+   ]
+}
+#borde
+Transform {
+   rotation 1 0 0 1.57
+   children [
+      Shape {
+         appearance USE metalamarillo
+         geometry Cylinder {
+            height 2.99
+            radius 3.3
+         }
+      }
+   ]
+}
+Transform {
+   translation 3.18 3.15 0
+   children [
+      Shape {
+         appearance USE metalamarillo
+         geometry Box {
+            size 6.36 0.3 3.012
+         }
+      }
+   ]
+}
+Transform {
+   translation 4.2 0.4 0
+   rotation 0 0 1 0.9
+   children [
+      Shape {
+         appearance USE metalamarillo
+         geometry Box {
+            size 7 0.3 3.01
+         }
+      }
+   ]
+}

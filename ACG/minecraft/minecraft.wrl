@@ -1,0 +1,243 @@
+#VRML V2.0 utf8
+
+DEF BloqueCesped Inline {
+   url "BloqueCesped.wrl"
+}
+Transform {
+   translation 0 5 0
+   children [USE BloqueCesped ]
+}
+Transform {
+   translation 0 10 0
+   children [USE BloqueCesped ]
+}
+Transform {
+   translation 0 15 0
+   children [USE BloqueCesped ]
+}
+Transform {
+   translation 0 0 5
+   children [USE BloqueCesped ]
+}
+Transform {
+   translation 0 5 5
+   children [USE BloqueCesped ]
+}
+Transform {
+   translation 0 5 -5
+   children [USE BloqueCesped ]
+}
+
+
+#secundario
+Transform {
+   translation 5 0 0
+   children [USE BloqueCesped ]
+}
+Transform {
+   translation 5 0 5
+   children [USE BloqueCesped ]
+}
+Transform {
+   translation 10 0 0
+   children [USE BloqueCesped ]
+}
+Transform {
+   translation 10 5 0
+   children [USE BloqueCesped ]
+}
+Transform {
+   translation 15 0 0
+   children [USE BloqueCesped ]
+}
+
+Transform {
+   translation 20 0 0
+   children [USE BloqueCesped ]
+}
+Transform {
+   translation 25 0 0
+   children [USE BloqueCesped ]
+}
+Transform {
+   translation 30 0 0
+   children [USE BloqueCesped ]
+}
+Transform {
+   translation 40 0 0
+   children [USE BloqueCesped ]
+}
+Transform {
+   translation 5 5 0
+   children [USE BloqueCesped ]
+}
+Transform {
+   translation 5 10 0
+   children [USE BloqueCesped ]
+}
+Transform {
+   translation 10 0 5
+   children [USE BloqueCesped ]
+}
+Transform {
+   translation 15 0 5
+   children [USE BloqueCesped ]
+}
+Transform {
+   translation 20 0 5
+   children [USE BloqueCesped ]
+}
+Transform {
+   translation 30 0 5
+   children [USE BloqueCesped ]
+}
+Transform {
+   translation 40 0 5
+   children [USE BloqueCesped ]
+}
+Transform {
+   translation 40 0 5
+   children [USE BloqueCesped ]
+}
+
+Transform {
+   translation -5 0 0
+   children [USE BloqueCesped ]
+}
+Transform {
+   translation -5 0 5
+   children [USE BloqueCesped ]
+}
+Transform {
+   translation -10 0 0
+   children [USE BloqueCesped ]
+}
+Transform {
+   translation -10 5 0
+   children [USE BloqueCesped ]
+}
+Transform {
+   translation -15 0 0
+   children [USE BloqueCesped ]
+}
+
+Transform {
+   translation -20 0 0
+   children [USE BloqueCesped ]
+}
+Transform {
+   translation -25 0 0
+   children [USE BloqueCesped ]
+}
+Transform {
+   translation -30 0 0
+   children [USE BloqueCesped ]
+}
+Transform {
+   translation -40 0 0
+   children [USE BloqueCesped ]
+}
+Transform {
+   translation -5 5 0
+   children [USE BloqueCesped ]
+}
+Transform {
+   translation -5 10 0
+   children [USE BloqueCesped ]
+}
+Transform {
+   translation -10 0 5
+   children [USE BloqueCesped ]
+}
+Transform {
+   translation -15 0 5
+   children [USE BloqueCesped ]
+}
+Transform {
+   translation -20 0 5
+   children [USE BloqueCesped ]
+}
+Transform {
+   translation -30 0 5
+   children [USE BloqueCesped ]
+}
+Transform {
+   translation -40 0 5
+   children [USE BloqueCesped ]
+}
+Transform {
+   translation 0 0 -5
+   children [USE BloqueCesped ]
+}
+Transform {
+   translation 5 0 -5
+   children [USE BloqueCesped ]
+}
+Transform {
+   translation 10 0 -5
+   children [USE BloqueCesped ]
+}
+Transform {
+   translation 15 0 -5
+   children [USE BloqueCesped ]
+}
+Transform {
+   translation 20 0 -5
+   children [USE BloqueCesped ]
+}
+Transform {
+   translation 25 0 -5
+   children [USE BloqueCesped ]
+}
+Transform {
+   translation 30 0 -5
+   children [USE BloqueCesped ]
+}
+Transform {
+   translation 35 0 -5
+   children [USE BloqueCesped ]
+}
+Transform {
+   translation 40 0 -5
+   children [USE BloqueCesped ]
+}
+Transform {
+   translation 45 0 -5
+   children [USE BloqueCesped ]
+}
+Transform {
+   translation -5 0 -5
+   children [USE BloqueCesped ]
+}
+Transform {
+   translation -10 0 -5
+   children [USE BloqueCesped ]
+}
+Transform {
+   translation -15 0 -5
+   children [USE BloqueCesped ]
+}
+Transform {
+   translation -20 0 -5
+   children [USE BloqueCesped ]
+}
+Transform {
+   translation -25 0 -5
+   children [USE BloqueCesped ]
+}
+Transform {
+   translation -30 0 -5
+   children [USE BloqueCesped ]
+}
+Transform {
+   translation -35 0 -5
+   children [USE BloqueCesped ]
+}
+Transform {
+   translation -40 0 -5
+   children [USE BloqueCesped ]
+}
+Transform {
+   translation -45 0 -5
+   children [USE BloqueCesped ]
+}

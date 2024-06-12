@@ -1,0 +1,50 @@
+#VRML V2.0 utf8
+
+Shape{
+appearance DEF metalamarillo Appearance{
+texture ImageTexture{
+url["colores/amarillo.jpg"]
+}
+}
+}
+DEF ojoDerecho Transform{
+children[
+Transform{
+translation 0 0 -5
+rotation 1 0 0 1.57
+children[
+Shape{
+appearance USE metalamarillo
+geometry Cylinder{
+height 10
+radius 2.5
+}
+}
+]
+}
+Transform{
+rotation 0 1 0 3.1416
+children[
+Transform{
+translation 0 0.0001 0.0001
+rotation 0 0 1 0.2
+children[Inline{url "ojo.wrl"}]
+}
+]
+}
+DEF timerOjoDerecho TimeSensor{
+cycleInterval	4
+loop TRUE
+}
+DEF oiOjoDerecho OrientationInterpolator{
+key[0,0.5,1]
+keyValue[
+0 0 0 0,
+0 0 1 -0.174533,
+0 0 0 0
+]
+}
+]
+}
+ROUTE timerOjoDerecho.fraction_changed TO oiOjoDerecho.set_fraction
+ROUTE oiOjoDerecho.value_changed TO ojoDerecho.set_rotation

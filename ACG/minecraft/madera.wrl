@@ -1,0 +1,42 @@
+#VRML V2.0 utf8
+
+Shape {
+   appearance Appearance {
+      texture ImageTexture {
+         url ["texturas/roble.jpg"]
+      }
+   }
+   geometry Box {
+      size 5 4.9 5
+   }
+}
+Transform {
+   translation 0 2.475 0
+   children [
+      Shape {
+         appearance Appearance {
+            texture ImageTexture {
+               url ["texturas/tronco.jpg"]
+            }
+         }
+         geometry Box {
+            size 5 0.05 5
+         }
+      }
+   ]
+}
+Transform {
+   translation 0 -2.475 0
+   children [
+      Shape {
+         appearance Appearance {
+            texture ImageTexture {
+               url ["texturas/tronco.jpg"]
+            }
+         }
+         geometry Box {
+            size 5 0.05 5
+         }
+      }
+   ]
+}

@@ -1,0 +1,62 @@
+#VRML V2.0 utf8
+
+Transform {
+	translation	-2.5 0 0
+	children [
+		Shape {
+			appearance Appearance {
+				texture	ImageTexture {
+					url	["texturas/ladrillo.jpeg"]
+				}
+			}
+			geometry Box {
+				size 0.2 3 5
+			}
+		}
+	]
+}
+Transform {
+	translation	2.5 0 0
+	children [
+		Shape {
+			appearance Appearance {
+				texture	ImageTexture {
+					url	["texturas/ladrillo.jpeg"]
+				}
+			}
+			geometry Box {
+				size 0.2 3 5
+			}
+		}
+	]
+}
+Transform {
+	translation 0 0	-2.6
+	children [
+		Shape {
+			appearance Appearance {
+				texture	ImageTexture {
+					url	["texturas/ladrillo.jpeg"]
+				}
+			}
+			geometry Box {
+				size 5.2 3 0.2
+			}
+		}
+	]
+}
+Transform {
+	translation 0 -1.6 -0.1
+	children [
+		Shape {
+			appearance Appearance {
+				texture	ImageTexture {
+					url	["texturas/piso-madera.jpg"]
+				}
+			}
+			geometry Box {
+				size 5.2 0.2 5.2
+			}
+		}
+	]
+}

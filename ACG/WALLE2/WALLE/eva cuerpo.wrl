@@ -1,0 +1,130 @@
+#VRML V2.0 utf8
+Viewpoint {
+  description "Vista desde lejos"
+  position 0 4 25  # Aleja la cámara en el eje Z
+  orientation 0 1 0 0
+}
+DEF cuerpo Transform {
+	children [
+		Transform {
+		   scale 1 1.75 1
+		   children [
+    		  Shape {
+        		 appearance Appearance {
+            		material Material {
+            		   diffuseColor 1 1 1
+            		}
+        		 }
+        		 geometry Sphere {
+            		radius 3
+        		 }
+    		  }
+		   ]
+		}
+		Transform {
+		   translation 0 2.625 0
+		   children [
+    		  Shape {
+        		 appearance Appearance {
+            		material Material {
+            		   diffuseColor 1 1 1
+            		}
+        		 }
+        		 geometry Cylinder {
+            		radius 3
+            		height 5.25
+        		 }
+    		  }
+		   ]
+		}
+	]
+}
+Transform {
+	children [
+		Transform {
+		   translation 0 8.5 0
+		   scale 1.5 1.25 1.5 
+		   children [
+    		  Shape {
+        		 appearance Appearance {
+            		material Material {
+            		   diffuseColor 1 1 1
+            		}
+        		 }
+        		 geometry Sphere {
+            		radius 2
+        		 }
+    		  }
+		   ]
+		}
+		Transform {
+		   translation 0 8.5 1.1
+		   scale 1.5 1.1 1.5
+		   children [
+    		  Shape{
+        		 appearance Appearance {
+            		material Material {
+            		   diffuseColor 0 0 0
+            		}
+        		 }
+        		 geometry Sphere {
+            		radius 1.5
+        		 }
+    		  }
+		   ]
+		}
+		Transform {
+		   translation -0.6 8.5 3.1
+		   scale 2.3 1.8 1
+		   rotation 0 0 1 -0.2
+		   children [
+    		  DEF ojo Shape {
+        		 appearance Appearance {
+            		material Material {
+            		   diffuseColor 0 0.7 0.9
+            		}
+        		 }
+        		 geometry Sphere {
+            		radius 0.25
+        		 }
+    		  }
+		   ]
+		}
+		Transform {
+		   translation 0.6 8.5 3.1
+		   scale 2.3 1.8 1
+		   rotation 0 0 1 0.2
+		   children [USE ojo]
+		}
+	]
+}
+
+Transform {
+	translation	3.75 1.5 0
+	children [
+DEF brazo Transform {
+	scale 1 12 3
+
+	children [
+		Shape {
+			appearance Appearance {
+				material Material {
+					diffuseColor 1 1 1
+				}
+			}
+			geometry Sphere	{
+				radius 0.3
+			}
+		}
+	]
+}
+]
+}
+
+Transform {
+	translation	-3.75 1.5 0
+	children [
+		USE	brazo
+	]
+}
+

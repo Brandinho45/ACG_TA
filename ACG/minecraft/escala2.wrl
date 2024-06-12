@@ -1,0 +1,158 @@
+#VRML V2.0 utf8
+
+#Pared lateral izquierda
+Transform {
+	translation	-2.5 0 0
+	children [
+		Shape {
+			appearance Appearance {
+				texture	ImageTexture {
+					url	["texturas/ladrillo.jpeg"]
+				}
+			}
+			geometry Box {
+				size 0.2 3 5
+			}
+		}
+	]
+}
+
+#Pared lateral derecha
+Transform {
+	translation	2.5 0 0
+	children [
+		Shape {
+			appearance Appearance {
+				texture	ImageTexture {
+					url	["texturas/ladrillo.jpeg"]
+				}
+			}
+			geometry Box {
+				size 0.2 3 5
+			}
+		}
+	]
+}
+
+#Pared del fondo
+Transform {
+	rotation 0 1 0 1.57
+	translation 0 0	-2.6
+	children [
+		Shape {
+			appearance Appearance {
+				texture	ImageTexture {
+					url	["texturas/ladrillo.jpeg"]
+				}
+			}
+			geometry Box {
+				size 0.2 3 5.2
+			}
+		}
+	]
+}
+
+
+
+#Piso de madera
+Transform {
+	translation 0 -1.6 0
+	children [
+		Shape {
+			appearance Appearance {
+				texture	ImageTexture {
+					url	["texturas/piso-madera.jpg"]
+				}
+			}
+			geometry Box {
+				size 5.2 0.2 5.4
+			}
+		}
+	]
+}
+#techo
+Transform {
+	rotation	0 0 1 1.57
+	translation	0 1.55 0
+	children	[
+		Shape	{
+			appearance Appearance {
+				texture ImageTexture	{
+					url["texturas/calamina.jpeg"]
+				}
+			}
+			geometry	Box {
+				size 0.1 5.6 5.8
+			}
+		}
+	]
+}
+
+#Pared frontal
+Transform {
+	scale 0.75 1 1
+	translation -0.65 0 2.6
+	children [
+		Shape {
+			appearance Appearance {
+				texture	ImageTexture {
+					url	["texturas/ladrillo.jpeg"]
+				}
+			}
+			geometry Box {
+				size 5.2 3 0.2
+			}
+		}
+	]
+}
+
+#Parte pequeña de la pared frontal
+Transform {
+	scale 0.25 0.3 1
+	translation 1.95 1.05 2.6
+	children [
+		Shape {
+			appearance Appearance {
+				texture	ImageTexture {
+					url	["texturas/ladrillo.jpeg"]
+				}
+			}
+			geometry Box {
+				size 5.2 3 0.2
+			}
+		}
+	]
+}
+
+#puerta
+Transform {
+	translation 1.85 -0.45 2.6
+	children [
+		Shape {
+			appearance Appearance {
+				texture	ImageTexture {
+					url	["texturas/puerta.jpg"]
+				}
+			}
+			geometry Box {
+				size 1.1 2.1 0.2
+			}
+		}
+	]
+}
+#columna
+Transform {
+	translation 2.5 -0.45 2.6
+	children [
+		Shape {
+			appearance Appearance {
+				texture	ImageTexture {
+					url	["texturas/ladrillo.jpeg"]
+				}
+			}
+			geometry Box {
+				size 0.2 2.1 0.2
+			}
+		}
+	]
+}
