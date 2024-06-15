@@ -1,0 +1,132 @@
+#VRML V2.0 utf8
+Shape {
+	appearance DEF metal Appearance {
+		texture ImageTexture {
+			url	["texturas/metalnuevo.jpg"]
+		}
+	}
+}
+
+Shape {
+	appearance USE metal 
+	geometry Cylinder {
+		height 2.5
+		radius 0.3
+	}
+}
+DEF mano Transform {
+   children [
+      Transform {
+	      translation	0 0.6 1.25
+	      children [
+		      Shape {
+			      appearance USE metal 
+			      geometry Box {
+				      size 0.5 1.01 2.5
+			      }
+		      }
+	      ]
+      }
+      Transform {
+	      translation	0 -0.6 1.25
+	      children [
+		      Shape {
+			      appearance USE metal 
+			      geometry Box {
+				      size 0.5 1 2.5
+			      }
+		      }
+	      ]
+      }
+      Transform {
+	      translation	0 -0.6 2.5
+	      children [
+		      Shape {
+			      appearance USE metal 
+			      geometry Cylinder {
+				      height 1.1
+				      radius 0.2
+			      }
+		      }
+	      ]
+      }
+      Transform {
+	      translation	0 0.6 2.5
+	      children [
+		      Shape {
+			      appearance USE metal 
+			      geometry Cylinder {
+				      height 1.1
+				      radius 0.2
+			      }
+		      }
+	      ]
+      }
+      DEF dedoA Transform {
+	      translation	0 0.6 3.75
+         center 0 0 -1.25
+	      children [
+		      Shape {
+			      appearance USE metal 
+			      geometry Box {
+				      size 0.5 1 2.5
+			      }
+		      }
+	      ]
+      }
+      DEF dedoB Transform {
+	      translation 0 -0.6 3.75
+         center 0 0 -1.25
+	      children [
+		      Shape {
+			      appearance USE metal 
+			      geometry Box {
+				      size 0.5 1 2.5
+			      }
+		      }
+	      ]
+      }
+   ]
+}
+      
+DEF timerdedo TimeSensor {
+         cycleInterval 3
+         loop TRUE
+      }
+DEF oidedoA OrientationInterpolator {
+   key [0,0.5,1]
+   keyValue [
+         0 1 0 0.174533,
+         0 1 0 0.436332
+         0 1 0 0.174533
+   ]
+}
+DEF oidedoB OrientationInterpolator {
+   key [0,0.5,1]
+   keyValue [
+      0 1 0 0.436332
+      0 1 0 0.174533
+      0 1 0 0.436332
+   ]
+}
+DEF timermano TimeSensor {
+   cycleInterval 5
+   loop TRUE
+}
+DEF oimano OrientationInterpolator {
+   key [0,0.5,1]
+   keyValue [
+      0 0 0 0,
+      0 1 0 0.523599
+      0 0 0 0
+   ]
+}
+#dedo de arriba
+ROUTE timerdedo.fraction_changed TO oidedoA.set_fraction
+ROUTE oidedoA.value_changed TO dedoA.set_rotation
+#dedo de abajo
+ROUTE timerdedo.fraction_changed TO oidedoB.set_fraction
+ROUTE oidedoB.value_changed TO dedoB.set_rotation 
+#mano
+ROUTE timermano.fraction_changed TO oimano.set_fraction
+ROUTE oimano.value_changed TO mano.set_rotation

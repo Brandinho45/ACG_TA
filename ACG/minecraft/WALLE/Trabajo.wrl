@@ -1,0 +1,99 @@
+#VRML V2.0 utf8
+
+Viewpoint {
+position 0 0 100
+orientation	 0 0 0 0.78
+fieldOfView	 0.78
+description	 "camara 1"
+}
+Background {
+	skyColor [0 0 1 0 0 0.6 1 0 0.0]
+	skyAngle [1.2 1.57]
+	groundColor	[0.5 0.5 0 0.5 0.5 0]
+	groundAngle	[1.57]
+}
+Transform {
+   translation 20 0 10
+   scale 1.5 1.5 1.5
+   rotation 0 1 0 -0.5
+   children [
+      Inline{
+         url "eva cuerpo.wrl"
+      }
+   ]
+}
+DEF boton Transform {
+   translation -20 0 0 
+   children [
+      Shape {
+         appearance Appearance {
+            material Material {
+               diffuseColor 1 0 0
+            }
+         }
+         geometry Sphere {
+            radius 3
+         }
+      }
+      DEF botonsensor TouchSensor {}
+   ]
+}
+
+DEF untels Transform {
+   translation 0 18 5
+   scale 1.5 1.5 1.5
+   children [
+      Inline {
+         url "UNTELS.wrl"
+      }
+   ]
+}
+DEF walle Transform {
+   children [
+      Inline {
+         url "walle.wrl"
+      }
+   ]
+}
+DEF timer TimeSensor {
+   cycleInterval 10
+   loop FALSE
+}
+DEF pi PositionInterpolator {
+   key [0,0.1,0.2,0.3,0.5,0.6,0.7,0.8,0.9,1]
+   keyValue [
+      0 0 0,
+      0 0 10,
+      0 0 10,
+      -50 0 10,
+      -50 0 10,
+      -50 0 -50,
+      -50 0 -50,
+      0 0 -50,
+      0 0 -50,
+      0 0 0,
+      0 0 0
+   ]
+}
+DEF oi OrientationInterpolator {
+   key [0,0.1,0.2,0.3,0.5,0.6,0.7,0.8,0.9,1]
+   keyValue [
+      0 0 0 0,
+      0 0 0 0,
+      0 1 0 -1.5708,
+      0 1 0 -1.5708,
+      0 1 0 -3.14,
+      0 1 0 -3.14,
+      0 1 0 -4.7108,
+      0 1 0 -4.7108,
+      0 0 0 0,
+      0 0 0 0
+   ]
+}
+
+ROUTE botonsensor.touchTime TO timer.set_startTime
+ROUTE timer.fraction_changed TO pi.set_fraction
+ROUTE pi.value_changed TO walle.set_translation
+ROUTE timer.fraction_changed TO oi.set_fraction
+ROUTE oi.value_changed TO walle.set_rotation
+

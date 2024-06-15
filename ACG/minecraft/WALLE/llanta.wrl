@@ -1,0 +1,137 @@
+#VRML V2.0 utf8
+Shape {
+	appearance DEF metal Appearance	{
+		texture	ImageTexture {
+			url	["texturas/metalnuevo.jpg"]
+		}
+	}
+}
+Shape {
+	appearance DEF negro Appearance	{
+		material Material {
+			diffuseColor 0 0 0
+		}
+	}
+}
+
+DEF eje1 Transform {
+	translation	2 0 0 
+	children [
+		Shape {
+			appearance USE metal
+			geometry Cylinder {
+				height 1.5
+				radius 0.6
+			}
+		}
+	]
+}
+DEF eje2 Transform{
+	translation	0 0 -1
+	children [
+		Shape {
+			appearance USE metal
+			geometry Cylinder {
+				height 1.5
+				radius 1
+			}
+		}
+	]
+}
+DEF eje3 Transform {
+	translation	-0.25 0 2
+	children [
+		Shape {
+			appearance USE metal
+			geometry Cylinder {
+				height 1.5
+				radius 0.75
+			}
+		}
+	]
+}
+#llanta negra
+Transform {
+	translation	2 0 0 
+	children [
+		Shape {
+			appearance USE negro
+			geometry Cylinder {
+				height 1.4
+				radius 0.75
+			}
+		}
+	]
+}
+Transform {
+	translation	0 0 -1
+	children [
+		Shape {
+			appearance USE negro
+			geometry Cylinder {
+				height 1.4
+				radius 1.15
+			}
+		}
+	]
+}
+Transform {
+	translation	-0.25 0 2
+	children [
+		Shape {
+			appearance USE negro
+			geometry Cylinder {
+				height 1.4
+				radius 0.9
+			}
+		}
+	]
+}
+#linea1 llanta
+Transform {
+	translation	-1 0 0.5
+	children [
+		Shape {
+			appearance USE negro
+			geometry Box {
+				size 0.3 1.4 3
+			}
+		}
+	]
+}
+#linea2 llanta
+Transform {
+	translation	2.4205 0 0.5063
+	rotation 0 1 0 -0.802851
+	children [
+		Inline{
+			url	"linea2_llanta.wrl"
+		}
+	]
+}
+Transform {
+	translation	0.6 0 -1.875
+	rotation 0 1 0 0.925025
+	children [
+		Inline {
+			url	"linea3_llanta.wrl"
+		}
+	]
+}
+DEF timereje TimeSensor {
+   cycleInterval 2
+   loop TRUE
+}
+DEF oieje OrientationInterpolator {
+   key [0,0.5,1]
+   keyValue [
+      0 0 0 0,
+      0 1 0 -3.14
+      0 1 0 -6.28
+   ]
+}
+
+ROUTE timereje.fraction_changed TO oieje.set_fraction
+ROUTE oieje.value_changed TO eje1.set_rotation
+ROUTE oieje.value_changed TO eje2.set_rotation
+ROUTE oieje.value_changed TO eje3.set_rotation

@@ -1,0 +1,91 @@
+#VRML V2.0 utf8
+
+Group {
+   children [
+      Transform {
+         scale 2 2 2
+         children [
+            DEF cuerpo Inline {
+               url "cuerpo.wrl"
+            }
+         ]
+      }
+      DEF brazo_izquierdo Transform {
+         translation -6.25 2 0
+
+         children [
+            DEF brazo Inline {
+               url "brazo.wrl"
+            }
+         ]
+      }
+		
+      DEF brazo_derecho Transform {
+
+         children [
+            Transform {
+               translation 6.25 2 0
+               rotation 0 0 1 3.1416
+               children [
+                  USE brazo
+               ]
+            }
+         ]
+      }
+
+		
+      DEF cabeza Transform {
+         center 0 0 0
+         children [
+      Transform {
+         scale 0.55 0.7 0.7
+         translation -3.5 9 3
+
+         children [
+            Inline {
+               url "cabeza.wrl"
+            }
+         ]
+      }]}
+	  Transform	{
+		  translation -7 -6 0
+		  rotation 0 0 1 1.57
+		  scale	2.2 2.2 2.2
+		  children [
+			  Inline {
+				 url "llanta.wrl"
+			  }
+
+		  ]
+	  }
+	  Transform	{
+		  translation 7 -6 0
+		  rotation 0 0 1 1.57
+		  scale	2.2 2.2 2.2
+		  children [
+			  Inline {
+				 url "llanta.wrl"
+			  }
+
+		  ]
+	  }
+   ]
+}
+DEF timercabeza TimeSensor {
+   cycleInterval 15
+   loop TRUE
+}
+DEF oicabeza OrientationInterpolator {
+   key [0,0.2,0.4,0.6,0.8,1]
+   keyValue [
+      0 0 0 0
+      0 0 0 0
+      0 1 0 0.523599
+      0 1 0 -0.523599
+      0 0 0 0
+   ]
+}
+ROUTE timercabeza.fraction_changed TO oicabeza.set_fraction
+ROUTE oicabeza.value_changed TO cabeza.set_rotation
+
+

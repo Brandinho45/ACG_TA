@@ -3,6 +3,7 @@ DEF nivel1 Transform {
    children [
       DEF hoja Transform {
          translation 2.5 7.5 2.5
+         scale 0.999 1 0.999
          children [
             Inline {
                url "hojamine.wrl"
@@ -133,7 +134,7 @@ Transform {
    children [USE hoja]
 }
 Transform {
-   translation -5 15 0
+   translation -5 15.0001 0
    children [USE hoja]
 }
 Transform {

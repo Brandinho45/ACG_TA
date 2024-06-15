@@ -1,0 +1,147 @@
+#VRML V2.0 utf8
+Viewpoint {
+    position 0 10 65
+    orientation 0 1 0 0.45 #eje (angulo de vista
+    fieldOfView 1 #45 grados
+    description "Vista inicial"
+}
+WorldInfo {
+    title "Día en el Mar en Minecraft"
+}
+
+Background {
+    skyColor [
+        0.53 0.81 0.98,  # Azul cielo (cerca del horizonte)
+        0.69 0.93 1.0,   # Azul más claro (más alto en el cielo)
+        0.87 1.0 1.0     # Azul muy claro (cenit)
+    ]
+    skyAngle [
+        1.57,  # 90 grados en radianes (horizonte)
+        3.14   # 180 grados en radianes (cenit)
+    ]
+    groundColor [
+        0.25 0.25 1.0,  # Azul de la imagen (cerca del horizonte)
+        0.25 0.25 1.0   # Azul de la imagen (más abajo)
+    ]
+    groundAngle [
+        1.57  # 90 grados en radianes (horizonte)
+    ]
+}
+DEF walle Transform {
+   scale 0.5 0.5 0.5
+   rotation 0 1 0 3.1416
+   translation -5 6.8 22
+   children [
+      Inline {
+         url "walle.wrl"
+      }
+   ]
+}
+DEF cesped8*16 Transform {
+   children [
+      DEF cesped8*8 Transform {
+         children [
+            DEF cesped4*8 Transform {
+               children [
+                  DEF cesped4*4 Transform {
+                     children [
+                        DEF cesped2*4 Transform {
+                           children [
+                              DEF cesped2*2 Transform {
+                                 children [
+                                    DEF cespe1*2 Transform {
+                                       children [
+                                          DEF cesped1*1 Transform {
+                                             children [
+                                                Inline {
+                                                   url "BloqueCesped.wrl"
+                                                }
+                                             ]
+                                          }
+                                          Transform {
+                                             translation 5 0 0
+                                             children [USE cesped1*1]
+                                          }
+                                       ]
+                                    }
+                                    Transform {
+                                       translation 0 0 -5
+                                       children [USE cespe1*2]
+                                    }
+                                 ]
+                              }
+                              Transform {
+                                 translation 10 0 0
+                                 children [USE cesped2*2]
+                              }
+                           ]
+                        }
+                        Transform {
+                           translation 0 0 10
+                           children [USE cesped2*4 ]
+                        }
+                     ]
+                  }
+                  Transform{
+                     translation 20 0 0
+                     children [USE cesped4*4]
+                  }
+               ]
+            }
+            Transform {
+               translation 0 0 -20
+               children [USE cesped4*8 ]
+            }
+         ]
+      }
+      Transform {
+         translation -40 0 0
+         children [USE cesped8*8 ]
+      }
+   ]
+}
+Transform{
+   translation 0 0 40
+   children [USE cesped8*16 ]
+}
+Transform {
+   translation -25 0 0
+   children [
+      DEF arbol Transform {
+         translation 0 10 0
+         children [
+            Inline {
+               url ["arbol.wrl"]
+            }
+         ]
+      }
+   ]
+}
+Transform {
+   translation 10 5 0
+   children [USE arbol ]
+}
+Transform {
+   translation 10 5 0
+   children [USE cesped1*1]
+}
+Transform {
+   translation 0 5 5
+   children [USE cespe1*2 ]
+}
+Transform {
+   translation 5 5 0
+   children [USE cesped2*2 ]
+}
+DEF cofre Transform {
+   translation -7.5 2.5 12.5
+   children [
+      Inline {
+         url "cofre.wrl"
+      }
+   ]
+}
+Transform {
+   translation 0 5 0
+   children [USE cesped1*1 ]
+}
